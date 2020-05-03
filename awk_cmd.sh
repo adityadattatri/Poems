@@ -24,6 +24,9 @@ awk '{gsub(/ /, "", $1);gsub(/  /, "", $2); print($1,$2,$3,$4,$5,$6,$7,$8)}' FIE
 awk '{if(NR==15) print $0;if(NR>=1257 && NR<=1391) print $0}' REC_SETT_PEN_25042020.csv > MAIN_REC_SETT_PEN_25042020.csv
 
 
+-----latest with blank lines removal
+awk '/--HEADER_QRY1_ST--/{flag=1; next} /DUAL DD1/{;next}/^$/{next;}/--HEADER_QRY1_END--/{flag=0}flag' CPE_MIS2_CLI_TBL_30042020_2100.csv>test_dks.csv;awk '/--MAIN_QRY12-----ST/{flag=1; next} /MAIN_QRY123/{next;}/^$/{next;}/--VV--MAIN_QRY12-----END--/{flag=0}flag' CPE_MIS2_CLI_TBL_30042020_2100.csv>>test_dks.csv
+
 
 -----cmd line test
 awk '/---qry1-hearder_st--/{flag=1; next} /DUAL/{flag=1;next} /---qry1-hearder_end--/{flag=0}flag' inputfile.csv 
