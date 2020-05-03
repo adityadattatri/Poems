@@ -35,4 +35,7 @@ awk '/MAIN_QRY/{flag=1; next}/---qry2-main_end--/{flag=0}flag' inputfile.csv
 awk '/---qry1-hearder_st--/{flag=1; next} /DUAL/{flag=1;next} /---qry1-hearder_end--/{flag=0}flag' inputfile.csv>adi.csv ;awk '/MAIN_QRY/{flag=1; next}/---qry2-main_end--/{flag=0}flag' inputfile.csv >>adi.csv
 
 
+-----new cmd to extract
+
+awk '/--HEADER_QRY1_ST--/{flag=1; next} /DUAL DD1/{flag=1;next} /--HEADER_QRY1_END--/{flag=0}flag' CPE_MIS2_CLI_TBL_30042020_2100.csv>test_file.csv; awk '/--MAIN_QRY12-----ST/{flag=1; next} /MAIN_QRY123/{flag=1;next} /--VV--MAIN_QRY12-----END--/{flag=0}flag' CPE_MIS2_CLI_TBL_30042020_2100.csv>>test_file.csv
 
