@@ -1,0 +1,1 @@
+for f in ` git diff --name-only master ESTWISE_AA_PROCESSING_MGN#46`; do cat $f>>../../suresh_sir_MGN/kk.sql; done
